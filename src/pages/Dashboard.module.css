@@ -1,0 +1,290 @@
+.dashboard {
+  min-height: 100vh;
+  background: var(--gray-50);
+  }
+  
+  .welcomeSection {
+    padding: 50px 0 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
+  }
+  
+  .welcomeSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(255,255,255,0.1)" cx="500" cy="500" r="600"/></svg>');
+    background-size: cover;
+  }
+  
+  .welcomeSection h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .welcomeSection p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .dashboardActions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .actionBtn {
+    padding: 12px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .actionBtn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  
+  .logoutBtn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+  
+  .logoutBtn:hover {
+    background: white;
+    color: #667eea;
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  
+  .statCard {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 4px solid var(--primary-500);
+    transition: all 0.3s ease;
+  }
+  
+  .statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .statCard h3 {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-600);
+    margin: 0;
+  }
+  
+  .statTrend {
+    display: block;
+    font-size: 0.85rem;
+    color: #10b981;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1f2937;
+    text-align: center;
+  }
+  
+  .quickActions {
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  
+  .actionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  
+  .actionCard {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+  }
+  
+  .actionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .actionIcon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  
+  .actionCard h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1f2937;
+  }
+  
+  .actionCard p {
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .cardBtn {
+    background: linear-gradient(135deg, var(--primary-400), var(--primary-500));    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cardBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);  }
+  
+  .recentActivity {
+    padding: 0 20px 50px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .activityList {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  .activityItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.3s ease;
+  }
+  
+  .activityItem:last-child {
+    border-bottom: none;
+  }
+  
+  .activityItem:hover {
+    background: #f9fafb;
+  }
+  
+  .activityIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .activityContent {
+    flex: 1;
+  }
+  
+  .activityContent p {
+    margin: 0 0 4px 0;
+    color: #374151;
+    font-size: 0.95rem;
+  }
+  
+  .activityTime {
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .welcomeSection h1 {
+      font-size: 2rem;
+    }
+    
+    .welcomeSection p {
+      font-size: 1.1rem;
+    }
+    
+    .dashboardActions {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .actionBtn {
+      width: 200px;
+    }
+    
+    .statsGrid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 0 15px;
+    }
+    
+    .statCard {
+      padding: 24px 16px;
+    }
+    
+    .quickActions {
+      padding: 0 15px;
+    }
+    
+    .actionsGrid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .actionCard {
+      padding: 24px;
+    }
+    
+    .recentActivity {
+      padding: 0 15px 40px;
+    }
+    
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+  }

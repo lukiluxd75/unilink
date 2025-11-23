@@ -1,0 +1,84 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* REGLAS CRÍTICAS PARA QUE LA FUENTE FUNCIONE EN TODA LA PÁGINA */
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: inherit;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  font-family: inherit;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Asegurar que todos los elementos específicos hereden la fuente */
+div, span, h1, h2, h3, h4, h5, h6, p, a, button, 
+input, textarea, select, label, table, td, th, 
+ul, ol, li, nav, header, footer, section, article, 
+main, aside, form, fieldset, legend, pre, code, 
+blockquote, figcaption, figure, caption {
+  font-family: inherit;
+}
+
+/* Estilos específicos para elementos de texto */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

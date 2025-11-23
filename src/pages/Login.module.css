@@ -1,0 +1,395 @@
+.loginPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  
+  /* Efectos de fondo animados */
+  loginCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
+  }
+  
+  .loginPage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+    opacity: 0.5;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loginContainer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    justify-content: center; /* Aseguramos centrado horizontal */
+    align-items: center; /* Aseguramos centrado vertical */
+    margin: 0 auto; /* Centrado adicional */
+  }
+  
+  .loginCard {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 35px;
+    border-radius: 24px;
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+    margin: 0 20px; /* Margen para dispositivos móviles */
+  }
+  
+  .loginCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
+  }
+  
+  .loginCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 35px 70px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+  
+  .loginHeader {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  
+  .loginHeader h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+  
+  .loginHeader p {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  .loginForm {
+    margin-bottom: 30px;
+  }
+  
+  .formGroup {
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .formLabel {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #374151;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    box-sizing: border-box; /* Aseguramos que padding no afecte el ancho */
+  }
+  
+  .formInput:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+  }
+  
+  .formInput::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+  }
+  
+  .loginBtn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary-400), var(--primary-500));    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .loginBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .loginBtn:hover::before {
+    left: 100%;
+  }
+  
+  .loginBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+  }
+  
+  .loginBtn:active {
+    transform: translateY(-1px);
+  }
+  
+  .loginBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .loginDivider {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+  }
+  
+  .loginDivider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  }
+  
+  .loginDivider span {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 20px;
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  
+  .roleSelection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .roleBtn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .roleBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .roleBtn:hover {
+    border-color: #ecedf1;
+    transform: translateY(-4px);
+    border-color: var(--primary-300);
+  }
+  
+  .roleBtn:hover::before {
+    opacity: 1;
+  }
+  
+  .roleSelected {
+    border-color: var(--primary-500) !important;
+  background: rgba(249, 115, 22, 0.05);
+    box-shadow: 
+      0 10px 25px rgba(102, 126, 234, 0.2),
+      0 6px 15px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .roleIcon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+  }
+  
+  .roleBtn:hover .roleIcon {
+    transform: scale(1.1);
+  }
+  
+  .roleInfo {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .roleInfo h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1f2937;
+    letter-spacing: -0.2px;
+  }
+  
+  .roleInfo p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .roleConfirmation {
+    margin-top: 24px;
+    padding: 16px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .roleConfirmation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  .roleConfirmation p {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Responsive mejorado */
+  @media (max-width: 480px) {
+    .loginPage {
+      padding: 15px;
+    }
+    
+    .loginCard {
+      padding: 30px 25px;
+      margin: 10px;
+      border-radius: 20px;
+    }
+    
+    .loginHeader h2 {
+      font-size: 1.8rem;
+    }
+    
+    .loginHeader p {
+      font-size: 1rem;
+    }
+    
+    .roleBtn {
+      padding: 18px 16px;
+    }
+    
+    .roleIcon {
+      font-size: 1.8rem;
+    }
+    
+    .formInput {
+      padding: 14px 16px;
+    }
+  }
+  
+  /* Para tablets */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .loginCard {
+      max-width: 400px;
+      padding: 35px 30px;
+    }
+  }

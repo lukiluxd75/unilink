@@ -1,0 +1,82 @@
+/* src/components/teachers/CertificateGallery.module.css */
+.certificateGallery {
+    width: 100%;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .noCertificates {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    padding: 2rem;
+  }
+  
+  .certificatesGrid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .certificateCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .certificateCard:hover {
+    box-shadow: var(--box-shadow);
+  }
+  
+  .certificateInfo h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  
+  .certificateInfo p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+  
+  .certificateActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .viewBtn, .downloadBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .viewBtn {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  .viewBtn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .downloadBtn {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 1px solid #d1d5db;
+  }
+  
+  .downloadBtn:hover {
+    background-color: #e5e7eb;
+  }

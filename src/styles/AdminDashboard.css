@@ -1,0 +1,447 @@
+.admin-dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+  
+  .admin-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+  }
+  
+  /* Sidebar */
+  .admin-sidebar {
+    width: 300px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-welcome {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  
+  .admin-welcome h2 {
+    color: #f97316;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .admin-welcome p {
+    color: #64748b;
+    margin: 0;
+  }
+  
+  .admin-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    text-align: left;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-btn:hover {
+    background: #fff7ed;
+    color: #f97316;
+  }
+  
+  .nav-btn.active {
+    background: #f97316;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .admin-actions {
+    margin-top: auto;
+  }
+  
+  .btn-logout {
+    width: 100%;
+    padding: 1rem;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background: #dc2626;
+  }
+  
+  /* Contenido Principal */
+  .admin-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-header h1 {
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  /* Estadísticas */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-icon {
+    font-size: 2.5rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+  
+  .stat-icon.users { background: #dbeafe; }
+  .stat-icon.pending { background: #fef3c7; }
+  .stat-icon.applications { background: #dcfce7; }
+  .stat-icon.opportunities { background: #f3e8ff; }
+  
+  .stat-info h3 {
+    color: #64748b;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .stat-number {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  /* Acciones Rápidas */
+  .quick-actions-section {
+    margin-bottom: 3rem;
+  }
+  
+  .quick-actions-section h2 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+  }
+  
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .quick-action-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quick-action-card.orange { border-left-color: #f97316; }
+  .quick-action-card.blue { border-left-color: #3b82f6; }
+  .quick-action-card.green { border-left-color: #10b981; }
+  .quick-action-card.purple { border-left-color: #8b5cf6; }
+  
+  .action-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .action-content h3 {
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .action-content p {
+    color: #64748b;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .action-count {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .action-btn {
+    margin-top: auto;
+    padding: 0.75rem;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background: #ea580c;
+  }
+  
+  /* Gestión de Elementos */
+  .management-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .filter-btn:hover {
+    border-color: #f97316;
+    color: #f97316;
+  }
+  
+  .filter-btn.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: white;
+  }
+  
+  /* Tarjetas de Certificados y Aplicaciones */
+  .certificates-list,
+  .applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .certificate-card,
+  .application-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+  
+  .certificate-card:hover,
+  .application-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #f97316;
+  }
+  
+  .certificate-info h3,
+  .application-info h3 {
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+  }
+  
+  .certificate-details,
+  .application-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .certificate-details p,
+  .application-details p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+  .certificate-actions,
+  .application-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 200px;
+  }
+  
+  .btn-view,
+  .btn-view-profile {
+    padding: 0.75rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-view:hover,
+  .btn-view-profile:hover {
+    background: #2563eb;
+  }
+  
+  .review-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .btn-approve,
+  .btn-reject {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    flex: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-approve {
+    background: #10b981;
+    color: white;
+  }
+  
+  .btn-approve:hover {
+    background: #059669;
+  }
+  
+  .btn-reject {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .btn-reject:hover {
+    background: #dc2626;
+  }
+  
+  /* Estados */
+  .status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+  
+  .status-pending {
+    background: #fef3c7;
+    color: #d97706;
+  }
+  
+  .status-approved {
+    background: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status-rejected {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+  
+  /* Estados vacíos y loading */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .admin-container {
+      flex-direction: column;
+    }
+    
+    .admin-sidebar {
+      width: 100%;
+      order: 2;
+    }
+    
+    .admin-content {
+      order: 1;
+    }
+    
+    .certificate-card,
+    .application-card {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .certificate-actions,
+    .application-actions {
+      width: 100%;
+    }
+    
+    .review-actions {
+      width: 100%;
+    }
+  }
