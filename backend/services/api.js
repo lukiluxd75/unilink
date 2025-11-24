@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/api';
 
-// Configurar axios para incluir el token en las peticiones
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {

@@ -1,11 +1,10 @@
-// routes/certificates.js - VERSIÓN CORREGIDA
-const express = require('express');
-const { authenticate, authorize } = require('../middleware/auth');
-const { uploadCertificate, getMyCertificates } = require('../controllers/certificateController');
+import express from "express";
+import { authenticate, authorize } from "../middleware/auth.js";
+import { uploadCertificate, getMyCertificates } from "../controllers/certificateController.js";
+
 const router = express.Router();
 
-// Rutas corregidas
-router.get('/', authenticate, getMyCertificates);
-router.post('/', authenticate, authorize('teacher'), uploadCertificate);
+router.get("/", authenticate, getMyCertificates);
+router.post("/", authenticate, authorize("teacher"), uploadCertificate);
 
-module.exports = router;
+export default router;

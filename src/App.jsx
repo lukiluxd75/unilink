@@ -5,9 +5,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
-import AdminDashboard from './components/admin/AdminDashboard'; // Asegúrate de crear este componente
-
-// Componente de ruta protegida
+import AdminDashboard from './components/admin/AdminDashboard'; 
+import Chatbot from "./components/ChatBot";
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const { user, isAuthenticated } = useAuth();
   
@@ -16,7 +15,6 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   }
   
   if (!allowedRoles.includes(user.role)) {
-    // Redirigir al dashboard según el rol del usuario
     switch (user.role) {
       case 'student':
         return <Navigate to="/student/dashboard" />;
@@ -32,7 +30,6 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   return children;
 };
 
-// Componente para redirección automática después del login
 const DashboardRedirect = () => {
   const { user } = useAuth();
   
@@ -58,14 +55,11 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            {/* Rutas públicas */}
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             
-            {/* Redirección automática */}
             <Route path="/dashboard" element={<DashboardRedirect />} />
             
-            {/* Rutas protegidas - Estudiante */}
             <Route 
               path="/student/dashboard" 
               element={
@@ -75,7 +69,7 @@ function App() {
               } 
             />
             
-            {/* Rutas protegidas - Profesor */}
+            
             <Route 
               path="/teacher/dashboard" 
               element={
@@ -85,7 +79,6 @@ function App() {
               } 
             />
             
-            {/* Rutas protegidas - Administrador */}
             <Route 
               path="/admin/dashboard" 
               element={
@@ -94,10 +87,10 @@ function App() {
                 </ProtectedRoute>
               } 
             />
-            
-            {/* Ruta por defecto para páginas no encontradas */}
+             
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
+          <Chatbot />
         </div>
       </Router>
     </AuthProvider>
